@@ -1,5 +1,6 @@
 .idea
-php-widgets/vendor
+vendor
 index.php
 assets
 php-widgets/chart1.php
+js-widgets
