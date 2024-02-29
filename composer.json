@@ -6,16 +6,16 @@
     "minimum-stability": "stable",
     "prefer-stable": true,
     "scripts": {
-        "phpcompatibility-version7-3" : "vendor/bin/phpcs -p --standard=PSR12 src/ --runtime-set testVersion 7.3 --extensions=php",
-        "phpcompatibility-version7-4" : "./vendor/bin/phpcs -p --standard=PSR12 src/ --runtime-set testVersion 7.4 --extensions=php",
-        "phpcompatibility-version8-0" : "./vendor/bin/phpcs -p --standard=PSR12 src/ --runtime-set testVersion 8.0 --extensions=php",
-        "phpcs-security": "./vendor/bin/phpcs --extensions=php --standard=ruleset-security-audit.xml ",
-        "lint": "phpcs --standard=PSR12 src/ examples/ tests/",
-        "lint-fix": "phpcbf --standard=PSR12 src/ examples/ tests/"
+        "phpcompatibility-version7-3" : "vendor/bin/phpcs -p --standard=PSR12 php-widgets/src/ --runtime-set testVersion 7.3 --extensions=php",
+        "phpcompatibility-version7-4" : "./vendor/bin/phpcs -p --standard=PSR12 php-widgets/src/ --runtime-set testVersion 7.4 --extensions=php",
+        "phpcompatibility-version8-0" : "./vendor/bin/phpcs -p --standard=PSR12 php-widgets/src/ --runtime-set testVersion 8.0 --extensions=php",
+        "lint": "phpcs --standard=PSR12 php-widgets/src/ examples/ php-widgets/tests/",
+        "lint-fix": "phpcbf --standard=PSR12 php-widgets/src/ examples/ php-widgets/tests/",
+        "phptest" : "./vendor/bin/phpunit "
     },
     "archive": {
         "exclude": [
-            "tests",
+            "php-widgets/tests",
             ".gitignore",
             "docs",
             ".github",
@@ -41,9 +41,9 @@
     },
     "autoload": {
         "psr-4": {
-            "Dashboards\\": "src/",
-            "Dashboards\\Examples\\": "../examples/",
-            "Dashboards\\Tests\\": "../tests/"
+            "Dashboards\\": "php-widgets/src/",
+            "Dashboards\\Examples\\": "examples",
+            "Dashboards\\Tests\\": "php-widgets/tests/"
         }
     },
     "require-dev": {
