@@ -70,7 +70,6 @@ class Filter
         string $operator,
         string $value
     ): Filter {
-        $this->setType(self::TYPES[0]);
         $this->setAddDisplayField($displayField);
         $this->setAddDisplayOperator($displayOperator);
         $this->setAddDisplayValue($displayValue);
@@ -97,7 +96,6 @@ class Filter
         string $operator,
         array $value
     ): Filter {
-        $this->setType(self::TYPES[1]);
         $this->setAddDisplayField($displayField);
         $this->setAddDisplayOperator($displayOperator);
         $this->setAddBetweenDisplayValue($displayValue);
@@ -257,21 +255,5 @@ class Filter
     private function setAddBetweenDisplayValue(array $addBetweenDisplayValue): void
     {
         $this->addBetweenDisplayValue = $addBetweenDisplayValue;
-    }
-
-    /**
-     * @return string
-     */
-    private function getType(): string
-    {
-        return $this->type;
-    }
-
-    /**
-     * @param string $type
-     */
-    private function setType(string $type): void
-    {
-        $this->type = $type;
     }
 }
