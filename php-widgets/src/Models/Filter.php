@@ -46,6 +46,16 @@ class Filter
      */
     private $type = '';
 
+    /**
+     * @var string
+     */
+    private $group = '';
+
+    /**
+     * @var string
+     */
+    private $condition = '';
+
     private const TYPES = [
         0 => 'addFilter',
         1 => 'addBetweenFilter'
@@ -68,7 +78,9 @@ class Filter
         string $displayValue,
         string $field,
         string $operator,
-        string $value
+        string $value,
+        string $group = '',
+        string $condition = ''
     ): Filter {
         $this->setAddDisplayField($displayField);
         $this->setAddDisplayOperator($displayOperator);
@@ -76,15 +88,26 @@ class Filter
         $this->setAddField($field);
         $this->setAddOperator($operator);
         $this->setAddValue($value);
-        $this->setFilter([
+
+        $filter = [
             'display_campo' => $this->getAddDisplayField(),
             'display_valor' => $this->getAddDisplayValue(),
             'display_operador' => $this->getAddDisplayOperator(),
             'campo' => $this->getAddField(),
             'operador' => $this->getAddOperator(),
             'valor' => $this->getAddValue(),
-        ]);
+        ];
 
+        if ($group !== '') {
+            $this->setAddGroup($group);
+            $filter['G'] = $this->getAddGroup();
+        }
+
+        if ($condition !== '') {
+            $this->setAddCondition($condition);
+            $filter['C'] = $this->getAddCondition();
+        }
+        $this->setFilter($filter);
         return $this;
     }
 
@@ -94,7 +117,9 @@ class Filter
         array $displayValue,
         string $field,
         string $operator,
-        array $value
+        array $value,
+        string $group = '',
+        string $condition = ''
     ): Filter {
         $this->setAddDisplayField($displayField);
         $this->setAddDisplayOperator($displayOperator);
@@ -102,7 +127,7 @@ class Filter
         $this->setAddField($field);
         $this->setAddOperator($operator);
         $this->setAddBetweenValue($value);
-        $this->setFilter([
+        $filter = [
             'display_campo' => $this->getAddDisplayField(),
             'display_valor' => $this->getAddBetweenDisplayValue()[0],
             'display_valor2' => $this->getAddBetweenDisplayValue()[1],
@@ -111,7 +136,19 @@ class Filter
             'operador' => $this->getAddOperator(),
             'valor' => $this->getAddBetweenValue()[0],
             'valor2' => $this->getAddBetweenValue()[1],
-        ]);
+        ];
+
+        if ($group !== '') {
+            $this->setAddGroup($group);
+            $filter['G'] = $this->getAddGroup();
+        }
+
+        if ($condition !== '') {
+            $this->setAddCondition($condition);
+            $filter['C'] = $this->getAddCondition();
+        }
+
+        $this->setFilter($filter);
 
         return $this;
     }
@@ -255,5 +292,39 @@ class Filter
     private function setAddBetweenDisplayValue(array $addBetweenDisplayValue): void
     {
         $this->addBetweenDisplayValue = $addBetweenDisplayValue;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAddGroup(): string
+    {
+        return $this->group;
+    }
+
+    /**
+     * @param string $group
+     * @return void
+     */
+    public function setAddGroup(string $group): void
+    {
+        $this->group = $group;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAddCondition(): string
+    {
+        return $this->condition;
+    }
+
+    /**
+     * @param string $condition
+     * @return void
+     */
+    private function setAddCondition(string $condition): void
+    {
+        $this->condition = $condition;
     }
 }

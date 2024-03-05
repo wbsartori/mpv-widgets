@@ -72,8 +72,8 @@ class ChartBarExample implements InterfaceWidget
             ->setFilters(
                 $this->addFilters()
                     ->addFilter('teste', '=', 'teste', 'teste', '=', 'teste')
-                    ->addFilter('teste', '=', 'teste', 'teste', '=', 'teste')
-                    ->addBetweenFilter('id', '=', ['1', '2'], 'teste', '=', ['1', '2'])
+                    ->addFilter('teste', '=', 'teste', 'teste', '=', 'teste', '1', 'OR')
+                    ->addBetweenFilter('id', '=', ['1', '2'], 'teste', '=', ['1', '2'], '1', 'AND')
                     ->get()
             )
             ->get();
