@@ -2,13 +2,13 @@
 <phpunit colors="true">
     <coverage includeUncoveredFiles="false">
         <include>
-            <directory suffix=".php">php-widgets/src/</directory>
+            <directory suffix=".php">widgets/src/</directory>
         </include>
     </coverage>
 
     <testsuites>
         <testsuite name="Test Suite">
-            <directory>php-widgets/tests</directory>
+            <directory>widgets/tests</directory>
         </testsuite>
     </testsuites>
 </phpunit>

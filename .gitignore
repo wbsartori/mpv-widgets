@@ -2,8 +2,7 @@
 vendor
 index.php
 assets
-php-widgets/chart1.php
-js-widgets
+widgets/chart1.php
 _reports
 .phpunit.result.cache
 go-pear.phar
@@ -11,3 +10,5 @@ Controllers
 routes
 .env
 compiled
+templates
+/templates/
