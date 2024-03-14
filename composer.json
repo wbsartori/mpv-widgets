@@ -38,13 +38,20 @@
         "php": ">=7.3",
         "ext-json": "*",
         "ext-pdo": "*",
-        "ext-mbstring": "*"
+        "ext-mbstring": "*",
+        "illuminate/container": "^8.83",
+        "illuminate/contracts": "^8.83",
+        "illuminate/events": "^8.83",
+        "illuminate/filesystem": "^8.83",
+        "illuminate/view": "^8.83",
+        "illuminate/routing": "^8.83"
     },
     "autoload": {
         "psr-4": {
-            "Dashboards\\": "php-widgets/src/",
+            "Dashboards\\": "widgets/src/",
+            "Controllers\\": "Controllers/",
             "Dashboards\\Examples\\": "examples",
-            "Dashboards\\Tests\\": "php-widgets/tests/"
+            "Dashboards\\Tests\\": "widgets/tests/"
         }
     },
     "require-dev": {

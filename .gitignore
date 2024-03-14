@@ -7,3 +7,7 @@ js-widgets
 _reports
 .phpunit.result.cache
 go-pear.phar
+Controllers
+routes
+.env
+compiled
