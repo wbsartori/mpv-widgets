@@ -24,8 +24,14 @@ class Views
 
         // Configuration
         // Note that you can set several directories where your templates are located
-        $pathsToTemplates = [dirname(__DIR__, 3) . '/templates'];
-        $pathToCompiledTemplates = dirname(__DIR__, 3) . '/compiled';
+        $pathsToTemplates = [
+            dirname(__DIR__, $_ENV['DIRECTORY_LEVEL'])
+            . DIRECTORY_SEPARATOR
+            . $_ENV['DIRECTORY_TEMPLATE']
+        ];
+        $pathToCompiledTemplates = dirname(__DIR__, $_ENV['DIRECTORY_LEVEL'])
+            . DIRECTORY_SEPARATOR
+            . $_ENV['DIRECTORY_COMPILED_TEMPLATE'];
 
         // Dependencies
         $filesystem = new Filesystem();
