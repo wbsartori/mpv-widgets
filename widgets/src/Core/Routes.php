@@ -1,6 +1,6 @@
 <?php
 
-namespace Dashboards\Resources;
+namespace Dashboards\Core;
 
 use Illuminate\Container\Container;
 use Illuminate\Events\Dispatcher;

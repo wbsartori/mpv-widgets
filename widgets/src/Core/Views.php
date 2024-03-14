@@ -1,6 +1,6 @@
 <?php
 
-namespace Dashboards\Resources;
+namespace Dashboards\Core;
 
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Blade;
