@@ -96,13 +96,13 @@ class ConfigurationTest extends TestCase
         );
 
         $current = $configuration
-            ->setType('bar')
-            ->setLabels([
+            ->type('bar')
+            ->labels([
                 'Janeiro', 'Fevereiro', 'Marco',
                 'Abril', 'Maio', 'Junho', 'Julho',
                 'Setembro', 'Novembro', 'Dezembro'
             ])
-            ->setDatasets([
+            ->datasets([
                 [
                     'label' => 'Ativados',
                     'data' => [12, 10, 3, 5, 2, 3, 10, 8, 9, 10, 25, 30],
@@ -116,12 +116,12 @@ class ConfigurationTest extends TestCase
                     'backgroundColor' => 'blue'
                 ]
             ])
-            ->setPlugins([
+            ->plugins([
                 'tootip' => [
                     'events' => ['click']
                 ]
             ])
-            ->setOptions([
+            ->options([
                 'scales' => [
                     'y' => [
                         'beginAtZero' => true

@@ -34,14 +34,14 @@ class ChartTest extends TestCase
                     'filters' => 'filter',
                 ),
         );
-        $current = $chart->setChart([
+        $current = $chart->chart([
             'type' => 'bar',
             'labels' => ['one', 'tow', 'three'],
             'data' => [1, 2, 3],
         ])
-            ->setName('Chart Name')
-            ->setTitle('Chart Title')
-            ->setFilters(['filters' => 'filter'])
+            ->name('Chart Name')
+            ->title('Chart Title')
+            ->filters(['filters' => 'filter'])
             ->get();
 
         self::assertEquals($expected, $current);

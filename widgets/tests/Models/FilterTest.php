@@ -7,17 +7,17 @@ use PHPUnit\Framework\TestCase;
 
 class FilterTest extends TestCase
 {
-    public function testAddFilter()
+    public function testFilter()
     {
         $filter = new Filter();
-        $current = $filter->addFilter('DisplayField', '=', 'DisplayValue', 'Field', '=', 'Value');
+        $current = $filter->filter('DisplayField', '=', 'DisplayValue', 'Field', '=', 'Value');
         self::assertInstanceOf(Filter::class, $current);
     }
 
-    public function testAddBetweenFilter()
+    public function testBetweenFilter()
     {
         $filter = new Filter();
-        $current = $filter->addBetweenFilter(
+        $current = $filter->betweenFilter(
             'DisplayField',
             '=',
             ['one', 'two'],
@@ -44,7 +44,7 @@ class FilterTest extends TestCase
                 ),
 
         );
-        $current = $filter->addFilter('DisplayField', '=', 'DisplayValue', 'Field', '=', 'Value')->get();
+        $current = $filter->filter('DisplayField', '=', 'DisplayValue', 'Field', '=', 'Value')->get();
         self::assertEquals($expected, $current);
     }
 }
