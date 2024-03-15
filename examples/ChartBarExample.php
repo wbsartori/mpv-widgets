@@ -28,16 +28,16 @@ class ChartBarExample implements InterfaceWidget
     public function render(): array
     {
         return $this->chart()
-            ->setTitle(self::CARDS['chart1']['title'])
-            ->setName(self::CARDS['chart1']['name'])
-            ->setChart(
+            ->title(self::CARDS['chart1']['title'])
+            ->name(self::CARDS['chart1']['name'])
+            ->chart(
                 $this->addConfiguration()
-                    ->setLabels([
+                    ->labels([
                         'Janeiro', 'Fevereiro', 'Marco',
                         'Abril', 'Maio', 'Junho', 'Julho',
                         'Setembro', 'Novembro', 'Dezembro'
                     ])
-                    ->setDatasets(
+                    ->datasets(
                         [
                             [
                                 'label' => 'Ativados',
@@ -53,27 +53,31 @@ class ChartBarExample implements InterfaceWidget
                             ]
                         ]
                     )
-                    ->setOptions(
+                    ->options(
                         [
                             'scales' => [
                                 'y' => [
                                     'beginAtZero' => true
                                 ]
+                            ],
+                            'title' => [
+                                'display' => true,
+                                'text' => 'Chart.js Bar Chart'
                             ]
                         ]
                     )
-                    ->setPlugins([
+                    ->plugins([
                         'tootip' => [
                             'events' => ['click']
-                        ]
+                        ],
                     ])
                     ->get()
             )
-            ->setFilters(
+            ->filters(
                 $this->addFilters()
-                    ->addFilter('teste', '=', 'teste', 'teste', '=', 'teste')
-                    ->addFilter('teste', '=', 'teste', 'teste', '=', 'teste', '1', 'OR')
-                    ->addBetweenFilter('id', '=', ['1', '2'], 'teste', '=', ['1', '2'], '1', 'AND')
+                    ->filter('teste', '=', 'teste', 'teste', '=', 'teste')
+                    ->filter('teste', '=', 'teste', 'teste', '=', 'teste', '1', 'OR')
+                    ->betweenFilter('id', '=', ['1', '2'], 'teste', '=', ['1', '2'], '1', 'AND')
                     ->get()
             )
             ->get();

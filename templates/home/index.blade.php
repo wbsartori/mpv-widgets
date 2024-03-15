@@ -1,10 +1,12 @@
 @extends('app')
 @section('content')
     <div class="card">
-        <div class="card-header">
-            {{$title}}
+        <div class="card-content">
+            <div class="card-header">
+                {{$title}}
+            </div>
+            <canvas id="{{$name}}"></canvas>
         </div>
-        <canvas id="{{$name}}"></canvas>
         <script>
             const {{$name}} = document.getElementById('{{$name}}');
             {{$name}}.onclick = imprimirConsole;
@@ -12,10 +14,12 @@
             new Chart({{$name}}, data);
         </script>
 
-        <div class="card-footer">
-            @foreach($chart_button['buttons'] as $button)
-                {!! $button !!}
-            @endforeach
-        </div>
+        @isset($chart_button)
+            <div class="card-footer">
+                @foreach($chart_button['buttons'] as $button)
+                    {!! $button !!}
+                @endforeach
+            </div>
+        @endisset
     </div>
 @endsection

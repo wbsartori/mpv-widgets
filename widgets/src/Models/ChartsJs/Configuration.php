@@ -30,14 +30,14 @@ class Configuration
      */
     public function get(): array
     {
+        $data = [];
+        $data['labels'] = $this->labels ?? '';
+        $data['datasets'] = $this->datasets ?? '';
+        $data['options'] = $this->options ?? '';
+        $data['plugins'] = $this->plugins ?? '';
         return [
             'type' => $this->type ?? 'bar',
-            'data' => [
-                'labels' => $this->labels,
-                'datasets' => $this->datasets,
-                'options' => $this->options,
-                'plugins' => $this->plugins,
-            ],
+            'data' => array_filter($data)
         ];
     }
 
@@ -45,7 +45,7 @@ class Configuration
      * @param string $type
      * @return $this
      */
-    public function setType(string $type): Configuration
+    public function type(string $type): Configuration
     {
         $this->type = $type;
         return $this;
@@ -55,7 +55,7 @@ class Configuration
      * @param array $labels
      * @return $this
      */
-    public function setLabels(array $labels): Configuration
+    public function labels(array $labels): Configuration
     {
         $this->labels = $labels;
         return $this;
@@ -65,7 +65,7 @@ class Configuration
      * @param array $datasets
      * @return $this
      */
-    public function setDatasets(array $datasets): Configuration
+    public function datasets(array $datasets): Configuration
     {
         $this->datasets = $datasets;
         return $this;
@@ -75,7 +75,7 @@ class Configuration
      * @param array $options
      * @return $this
      */
-    public function setOptions(array $options): Configuration
+    public function options(array $options): Configuration
     {
         $this->options = $options;
         return $this;
@@ -85,7 +85,7 @@ class Configuration
      * @param array $plugins
      * @return $this
      */
-    public function setPlugins(array $plugins): Configuration
+    public function plugins(array $plugins): Configuration
     {
         $this->plugins = $plugins;
         return $this;

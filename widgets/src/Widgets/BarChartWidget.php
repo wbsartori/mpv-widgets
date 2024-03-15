@@ -44,42 +44,44 @@ class BarChartWidget
      */
     protected $pointStyle = 'circle';
 
-    /**
-     * @var array
-     */
-    protected $bar = [
-        'type' => 'bar',
-        'options' => [
-            'legend' => [
-                'position' => 'top'
-            ],
-            'tooltips' => [
-                'mode' => 'index'
-            ],
-            'plugins' => [
-                'datalabels' => [
-                    'display' => true,
-                    'anchor' => 'end',
-                    'backgroundColor' => 'function (context) {return context.dataset.backgroundColor;}',
-                    'borderRadius' => 4,
-                    'color' => 'black',
-                    'font' => [
-                        'weight' => 'bold',
-                        'size' => 8
-                    ],
-                    'formatter' => 'Math.round',
+
+    public function bar(): array
+    {
+        return [
+            'type' => $this->type ?? 'bar',
+            'options' => [
+                'legend' => [
+                    'position' => 'top'
+                ],
+                'tooltips' => [
+                    'mode' => 'index'
+                ],
+                'plugins' => [
+                    'datalabels' => [
+                        'display' => true,
+                        'anchor' => 'end',
+                        'backgroundColor' => 'function (context) {return context.dataset.backgroundColor;}',
+                        'borderRadius' => 4,
+                        'color' => 'black',
+                        'font' => [
+                            'weight' => 'bold',
+                            'size' => 8
+                        ],
+                        'formatter' => 'Math.round',
+                    ]
+                ],
+                'layout' => [
+                    'padding' => [
+                        'left' => 10,
+                        'right' => 10,
+                        'top' => 0,
+                        'bottom' => 10
+                    ]
                 ]
             ],
-            'layout' => [
-                'padding' => [
-                    'left' => 10,
-                    'right' => 10,
-                    'top' => 0,
-                    'bottom' => 10
-                ]
-            ]
-        ],
-    ];
+        ];
+    }
+
 
     public function type(string $type): BarChartWidget
     {

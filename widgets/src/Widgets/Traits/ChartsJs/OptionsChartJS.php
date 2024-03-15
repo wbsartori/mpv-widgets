@@ -3,6 +3,7 @@
 namespace Dashboards\Widgets\Traits\ChartsJs;
 
 use Dashboards\Models\ChartsJs\Configuration;
+use Dashboards\Models\ChartsJs\Datasets;
 use Dashboards\Models\Filter;
 use Dashboards\Models\Chart;
 use Dashboards\Widgets\Abstracts\Widget;
@@ -34,6 +35,14 @@ trait OptionsChartJS
     public function addFilters(): Filter
     {
         return new Filter();
+    }
+
+    /**
+     * @return Datasets
+     */
+    public function addDatasets(): Datasets
+    {
+        return new Datasets();
     }
 
     /**

@@ -38,7 +38,7 @@ class Chart
      * @param string $title
      * @return Chart
      */
-    public function setTitle(string $title): Chart
+    public function title(string $title): Chart
     {
         $this->title = $title;
         return $this;
@@ -48,7 +48,7 @@ class Chart
      * @param string $name
      * @return Chart
      */
-    public function setName(string $name): Chart
+    public function name(string $name): Chart
     {
         $this->name = $name;
         return $this;
@@ -58,7 +58,7 @@ class Chart
      * @param array $chart
      * @return Chart
      */
-    public function setChart(array $chart): Chart
+    public function chart(array $chart): Chart
     {
         $this->chart = $chart;
         return $this;
@@ -68,7 +68,7 @@ class Chart
      * @param array $filters
      * @return Chart
      */
-    public function setFilters(array $filters): Chart
+    public function filters(array $filters): Chart
     {
         $this->filters = $filters;
         return $this;

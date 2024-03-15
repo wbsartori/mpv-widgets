@@ -72,7 +72,7 @@ class Filter
      * @param string $value
      * @return $this
      */
-    public function addFilter(
+    public function filter(
         string $displayField,
         string $displayOperator,
         string $displayValue,
@@ -111,7 +111,7 @@ class Filter
         return $this;
     }
 
-    public function addBetweenFilter(
+    public function betweenFilter(
         string $displayField,
         string $displayOperator,
         array $displayValue,
