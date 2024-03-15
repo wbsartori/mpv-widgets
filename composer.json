@@ -16,7 +16,7 @@
     },
     "archive": {
         "exclude": [
-            "php-widgets/tests",
+            "widgets/tests",
             ".gitignore",
             "docs",
             ".github",
