@@ -1,78 +1,78 @@
 <?php
 
-namespace Dashboards\Widgets\Traits\ChartsJs;
+namespace Dashboards\Widgets;
 
-trait LineChartWidget
+class LineChartWidget
 {
     /**
      * @var string
      */
-    public $type = 'line';
+    protected $type = 'line';
 
     /**
      * @var numeric
      */
-    public $tension = 0;
+    protected $tension = 0;
 
     /**
      * @var {Color}
      */
-    public $backgroundColor = 'Chart.defaults.backgroundColor';
+    protected $backgroundColor = 'Chart.defaults.backgroundColor';
 
     /**
      * @var numeric
      */
-    public $borderWidth = 3;
+    protected $borderWidth = 3;
 
     /**
      * @var {Color}
      */
-    public $borderColor = 'Chart.defaults.borderColor';
+    protected $borderColor = 'Chart.defaults.borderColor';
 
     /**
      * @var string
      */
-    public $borderCapStyle = 'butt';
+    protected $borderCapStyle = 'butt';
 
     /**
      * @var array {number[]}
      */
-    public $borderDash = [];
+    protected $borderDash = [];
 
     /**
      * @var numeric {number}
      */
-    public $borderDashOffset;
+    protected $borderDashOffset;
 
     /**
      * @var string {'round'|'bevel'|'miter'}
      */
-    public $borderJoinStyle = 'miter';
+    protected $borderJoinStyle = 'miter';
 
     /**
      * @var boolean
      */
-    public $capBezierPoints = true;
+    protected $capBezierPoints = true;
 
     /**
      * @var string
      */
-    public $cubicInterpolationMode = 'default';
+    protected $cubicInterpolationMode = 'default';
 
     /**
      * @var boolean|string}
      */
-    public $fill = false;
+    protected $fill = false;
 
     /**
      * @var bool
      */
-    public $stepped = false;
+    protected $stepped = false;
 
     /**
      * @var array
      */
-    public $line = [
+    protected $line = [
         'type' => 'line',
         'options' => [
             'legend' => [

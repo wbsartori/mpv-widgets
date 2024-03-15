@@ -1,53 +1,53 @@
 <?php
 
-namespace Dashboards\Widgets\Traits\ChartsJs;
+namespace Dashboards\Widgets;
 
-trait BarChartWidget
+class BarChartWidget
 {
     /**
      * @var string
      */
-    public $type = 'line';
+    protected $type = 'line';
 
     /**
      * @var {Color}
      */
-    public $backgroundColor = 'Chart.defaults.backgroundColor';
+    protected $backgroundColor = 'Chart.defaults.backgroundColor';
 
     /**
      * @var numeric
      */
-    public $borderWidth = 0;
+    protected $borderWidth = 0;
 
     /**
      * @var string
      */
-    public $borderColor = 'Chart.defaults.borderColor';
+    protected $borderColor = 'Chart.defaults.borderColor';
 
     /**
      * @var string
      */
-    public $borderSkipped = 'start';
+    protected $borderSkipped = 'start';
 
     /**
      * @var numeric|object
      */
-    public $borderRadius = 0;
+    protected $borderRadius = 0;
 
     /**
      * @var numeric|'auto'
      */
-    public $inflateAmount = 'auto';
+    protected $inflateAmount = 'auto';
 
     /**
      * @var string
      */
-    public $pointStyle = 'circle';
+    protected $pointStyle = 'circle';
 
     /**
      * @var array
      */
-    public $bar = [
+    protected $bar = [
         'type' => 'bar',
         'options' => [
             'legend' => [

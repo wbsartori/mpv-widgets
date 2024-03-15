@@ -6,6 +6,8 @@ use Dashboards\Models\ChartsJs\Configuration;
 use Dashboards\Models\Filter;
 use Dashboards\Models\Chart;
 use Dashboards\Widgets\Abstracts\Widget;
+use Dashboards\Widgets\BarChartWidget;
+use Dashboards\Widgets\LineChartWidget;
 
 trait OptionsChartJS
 {
@@ -32,5 +34,21 @@ trait OptionsChartJS
     public function addFilters(): Filter
     {
         return new Filter();
+    }
+
+    /**
+     * @return BarChartWidget
+     */
+    public function chartBar(): BarChartWidget
+    {
+        return new BarChartWidget();
+    }
+
+    /**
+     * @return LineChartWidget
+     */
+    public function chartLine(): LineChartWidget
+    {
+        return new LineChartWidget();
     }
 }
