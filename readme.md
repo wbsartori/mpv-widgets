@@ -1,4 +1,4 @@
-<h1 style="text-align: center;">MVP DASHBAORDS</h1>
+<h1 style="text-align: center;">WIDGETS (Dashboards)</h1>
 
 [//]: # (<p align="center">)
 
@@ -12,7 +12,7 @@
 
 [//]: # (</p>)
 
-## About Mvp Dashboards
+## About Widgets
 
 [//]: # (escrever sobre o pacote aqui)
 
@@ -33,3 +33,15 @@
 
 [//]: # ()
 [//]: # (The Laravel framework is open-sourced software licensed under the [MIT license]&#40;https://opensource.org/licenses/MIT&#41;.)
+
+---
+Este Projeto visa a abstração da biblioteca de gráficos ChartJS, através dele será possível a criação de gráficos utilizando apenas php como métodos e objetos especiais para a construção.
+
+---
+
+##### Logo mais abaixo será construida a documentação
+
+### Core
+### Models
+### Widgets
+### WidgetInit
