@@ -1,6 +1,6 @@
 <?php
 
-namespace Dashboards\Examples;
+namespace Dashboards\Examples\Services;
 
 use Dashboards\Widgets\Interfaces\InterfaceWidget;
 use Dashboards\Widgets\Traits\ChartsJs\OptionsChartJS;

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Dashboards\Core;
 
 use Dashboards\Core\Templates\RoutesTemplate;
@@ -15,9 +17,9 @@ class Routes
     /**
      * @var string
      */
-    private $path;
-    private $filename;
-    private $userPermissionPath;
+    private string $path = '';
+    private string $filename = '';
+    private string $userPermissionPath = '';
     private const DIRECTORY_PATH = 'routes';
     private const FILENAME = 'web';
     private const PHP_EXTENSION = '.php';
@@ -70,13 +72,23 @@ class Routes
 
     public function generateEmptyRoutesFile(): bool
     {
-        if (is_null($this->filename)) {
+        (new Environment('.env', 3));
+        if (
+            $this->filename == '' &&
+            (isset(getenv()['DIRECTORY_ROUTER']) && getenv()['DIRECTORY_ROUTER'] === '')
+        ) {
             $this->filename = $this->path . DIRECTORY_SEPARATOR . self::FILENAME . self::PHP_EXTENSION;
             if (!file_exists($this->filename)) {
                 $file = fopen($this->filename, 'wr');
                 fwrite($file, RoutesTemplate::template());
             }
 
+            return true;
+        } elseif (
+            $this->filename === '' &&
+            (isset(getenv()['DIRECTORY_ROUTER']) && getenv()['DIRECTORY_ROUTER'] !== '')
+        ) {
+            $this->filename = getenv()['DIRECTORY_ROUTER'] . self::PHP_EXTENSION;
             return true;
         }
 
@@ -93,12 +105,20 @@ class Routes
     public function generateEmptyRoutesDirectory()
     {
             $this->userPermissionPath ?? $this->setUserPermissionPath('www-data');
-        if (is_null($this->path)) {
+        if (
+            $this->path === '' &&
+            (isset(getenv()['DIRECTORY_ROUTER']) && getenv()['DIRECTORY_ROUTER'] === '')
+        ) {
             $this->path = dirname(__DIR__, 3) . DIRECTORY_SEPARATOR . self::DIRECTORY_PATH;
             if (!file_exists($this->path)) {
                 mkdir($this->path, 0775, true);
                 chown($this->path, $this->userPermissionPath);
             }
+        } elseif (
+            $this->path === '' &&
+            (isset(getenv()['DIRECTORY_ROUTER']) && getenv()['DIRECTORY_ROUTER'] !== '')
+        ) {
+            return true;
         }
 
         if (!file_exists($this->path)) {

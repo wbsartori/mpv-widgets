@@ -1,15 +1,10 @@
 .idea
 vendor
-index.php
 assets
 widgets/chart1.php
 _reports
 .phpunit.result.cache
 go-pear.phar
-Controllers
-routes
 .env
 compiled
-templates
-/templates/
 node_modules

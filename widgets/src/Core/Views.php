@@ -1,7 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Dashboards\Core;
 
+use Illuminate\Container\Container;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Facade;
@@ -14,28 +17,30 @@ use Illuminate\View\FileViewFinder;
 
 class Views
 {
+    protected Container $container;
+
     public function load(): \Illuminate\View\Factory
     {
-        $container = App::getInstance();
+        $this->container = App::getInstance();
 
         // we have to bind our app class to the interface
         // as the blade compiler needs the `getNamespace()` method to guess Blade component FQCNs
-        $container->instance(\Illuminate\Contracts\Foundation\Application::class, $container);
+        $this->container->instance(\Illuminate\Contracts\Foundation\Application::class, $this->container);
 
         // Configuration
         // Note that you can set several directories where your templates are located
         $pathsToTemplates = [
-            dirname(__DIR__, $_ENV['DIRECTORY_LEVEL'])
+            dirname(__DIR__, intval($_ENV['DIRECTORY_LEVEL']))
             . DIRECTORY_SEPARATOR
             . $_ENV['DIRECTORY_TEMPLATE']
         ];
-        $pathToCompiledTemplates = dirname(__DIR__, $_ENV['DIRECTORY_LEVEL'])
+        $pathToCompiledTemplates = dirname(__DIR__, intval($_ENV['DIRECTORY_LEVEL']))
             . DIRECTORY_SEPARATOR
             . $_ENV['DIRECTORY_COMPILED_TEMPLATE'];
 
         // Dependencies
         $filesystem = new Filesystem();
-        $eventDispatcher = new \Illuminate\Events\Dispatcher($container);
+        $eventDispatcher = new \Illuminate\Events\Dispatcher($this->container);
 
         // Create View Factory capable of rendering PHP and Blade templates
         $viewResolver = new EngineResolver();
@@ -47,10 +52,10 @@ class Views
 
         $viewFinder = new FileViewFinder($filesystem, $pathsToTemplates);
         $viewFactory = new Factory($viewResolver, $viewFinder, $eventDispatcher);
-        $viewFactory->setContainer($container);
-        Facade::setFacadeApplication($container);
-        $container->instance(Factory::class, $viewFactory);
-        $container->alias(
+        $viewFactory->setContainer($this->container);
+        Facade::setFacadeApplication($this->container);
+        $this->container->instance(Factory::class, $viewFactory);
+        $this->container->alias(
             Factory::class,
             (new class extends View {
                 public static function getFacadeAccessor()
@@ -59,8 +64,8 @@ class Views
                 }
             })::getFacadeAccessor()
         );
-        $container->instance(BladeCompiler::class, $bladeCompiler);
-        $container->alias(
+        $this->container->instance(BladeCompiler::class, $bladeCompiler);
+        $this->container->alias(
             BladeCompiler::class,
             (new class extends Blade {
                 public static function getFacadeAccessor()

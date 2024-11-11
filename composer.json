@@ -48,6 +48,7 @@
     },
     "autoload": {
         "psr-4": {
+            "Dashboards\\Packages\\": "packages",
             "Dashboards\\": "widgets/src/",
             "Controllers\\": "Controllers/",
             "Dashboards\\Examples\\": "examples",
