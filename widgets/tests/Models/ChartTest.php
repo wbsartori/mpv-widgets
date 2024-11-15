@@ -2,7 +2,7 @@
 
 namespace Dashboards\Tests\Models;
 
-use Dashboards\Models\Chart;
+use Dashboards\Widgets\Charts\Chart;
 use PHPUnit\Framework\TestCase;
 
 class ChartTest extends TestCase

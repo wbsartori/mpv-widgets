@@ -2,13 +2,13 @@
 
 namespace Dashboards\Widgets\Traits\ChartsJs;
 
-use Dashboards\Models\ChartsJs\Configuration;
-use Dashboards\Models\ChartsJs\Datasets;
-use Dashboards\Models\Filter;
-use Dashboards\Models\Chart;
 use Dashboards\Widgets\Abstracts\Widget;
 use Dashboards\Widgets\BarChartWidget;
 use Dashboards\Widgets\LineChartWidget;
+use Dashboards\Widgets\Charts\Chart;
+use Dashboards\Widgets\Charts\ChartsJs\Configuration;
+use Dashboards\Widgets\Charts\ChartsJs\Datasets;
+use Dashboards\Widgets\Charts\Filter;
 
 trait OptionsChartJS
 {

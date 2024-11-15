@@ -1,6 +1,6 @@
 <?php
 
-namespace Dashboards\Models;
+namespace Dashboards\Widgets\Charts;
 
 class Filter
 {

@@ -2,7 +2,7 @@
 
 namespace Dashboards\Tests\Models\ChartsJs;
 
-use Dashboards\Models\ChartsJs\Configuration;
+use Dashboards\Widgets\Charts\ChartsJs\Configuration;
 use PHPUnit\Framework\TestCase;
 
 class ConfigurationTest extends TestCase

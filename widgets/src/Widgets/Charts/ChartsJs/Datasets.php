@@ -1,6 +1,6 @@
 <?php
 
-namespace Dashboards\Models\ChartsJs;
+namespace Dashboards\Widgets\Charts\ChartsJs;
 
 class Datasets
 {

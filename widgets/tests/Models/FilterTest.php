@@ -2,7 +2,7 @@
 
 namespace Dashboards\Tests\Models;
 
-use Dashboards\Models\Filter;
+use Dashboards\Widgets\Charts\Filter;
 use PHPUnit\Framework\TestCase;
 
 class FilterTest extends TestCase
