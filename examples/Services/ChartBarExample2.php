@@ -5,13 +5,13 @@ namespace Dashboards\Examples\Services;
 use Dashboards\Widgets\Interfaces\InterfaceWidget;
 use Dashboards\Widgets\Traits\ChartsJs\OptionsChartJS;
 
-class ChartBarExample implements InterfaceWidget
+class ChartBarExample2 implements InterfaceWidget
 {
     use OptionsChartJS;
 
     private const CARDS = [
         'chart' => [
-            'title' => 'Clientes Inativados por mes',
+            'title' => 'Clientes Inativados por mes 2',
             'name' => 'clientes_inativados_mes'
         ],
     ];

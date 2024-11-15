@@ -8,3 +8,4 @@ go-pear.phar
 .env
 compiled
 node_modules
+config

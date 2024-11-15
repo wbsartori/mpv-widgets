@@ -1,6 +1,6 @@
 <?php
 
-namespace Dashboards\Core;
+namespace Dashboards;
 
 use Illuminate\Container\Container;
 

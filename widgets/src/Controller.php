@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Dashboards\Core;
+namespace Dashboards;
 
 use Illuminate\Routing\Controller as BaseController;
 

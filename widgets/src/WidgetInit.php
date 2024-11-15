@@ -6,12 +6,12 @@ class WidgetInit
 {
     public static function init()
     {
-        (new \Dashboards\Core\Environment());
+        (new \Dashboards\Environment());
     }
 
     public static function initAll()
     {
-        (new \Dashboards\Core\Environment());
-        (new \Dashboards\Core\Routes())->routes();
+        (new \Dashboards\Environment());
+        (new \Dashboards\Routes())->routes();
     }
 }

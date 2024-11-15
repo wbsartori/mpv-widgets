@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Dashboards\Core;
+namespace Dashboards;
 
 use Illuminate\Container\Container;
 use Illuminate\Filesystem\Filesystem;
@@ -17,6 +17,11 @@ use Illuminate\View\FileViewFinder;
 
 class Views
 {
+
+    private const TEMPLATE_PATH = 'widgets/src/Templates';
+
+    private const COMPILER_PATH = 'widgets/src/Templates/compiled';
+
     protected Container $container;
 
     public function load(): \Illuminate\View\Factory
@@ -30,13 +35,13 @@ class Views
         // Configuration
         // Note that you can set several directories where your templates are located
         $pathsToTemplates = [
-            dirname(__DIR__, intval($_ENV['DIRECTORY_LEVEL']))
+            dirname(__DIR__, 2)
             . DIRECTORY_SEPARATOR
-            . $_ENV['DIRECTORY_TEMPLATE']
+            . self::TEMPLATE_PATH,
         ];
-        $pathToCompiledTemplates = dirname(__DIR__, intval($_ENV['DIRECTORY_LEVEL']))
+        $pathToCompiledTemplates = dirname(__DIR__, 2)
             . DIRECTORY_SEPARATOR
-            . $_ENV['DIRECTORY_COMPILED_TEMPLATE'];
+            . self::COMPILER_PATH;
 
         // Dependencies
         $filesystem = new Filesystem();

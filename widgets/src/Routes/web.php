@@ -20,10 +20,11 @@ $router = new Router(new Dispatcher());
 |
 */
 $router->group([
-    'namespace' => '\\Dashboards\\Examples\\Controllers',
+    'namespace' => '\\Dashboards\\Controllers',
     'prefix' => '/'
 ], function (Router $router) {
-    $router->get('/', ['name' => 'home.index', 'uses' => 'HomeController@index']);
+    $router->get('/', ['name' => 'index', 'uses' => 'HomeController@index']);
+    $router->get('/home', ['name' => 'index', 'uses' => 'HomeController@index']);
 });
 
 
