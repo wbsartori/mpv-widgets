@@ -9,6 +9,13 @@ class ChartBarExample implements InterfaceWidget
 {
     use OptionsChartJS;
 
+    protected string $navigationName = 'Home';
+    protected string $navigationIcon = 'heroicon-o-home';
+    protected int $navigationOrder = 1;
+    protected int $navigationRow = 1;
+    protected int $navigationColumn = 1;
+
+
     private const CARDS = [
         'chart' => [
             'title' => 'Clientes Inativados por mes',

@@ -18,9 +18,9 @@ use Illuminate\View\FileViewFinder;
 class Views
 {
 
-    private const TEMPLATE_PATH = 'widgets/src/Templates';
+    private const TEMPLATE_PATH = 'src/Templates';
 
-    private const COMPILER_PATH = 'widgets/src/Templates/compiled';
+    private const COMPILER_PATH = 'src/Templates/compiled';
 
     protected Container $container;
 
@@ -35,11 +35,11 @@ class Views
         // Configuration
         // Note that you can set several directories where your templates are located
         $pathsToTemplates = [
-            dirname(__DIR__, 2)
+            dirname(__DIR__)
             . DIRECTORY_SEPARATOR
             . self::TEMPLATE_PATH,
         ];
-        $pathToCompiledTemplates = dirname(__DIR__, 2)
+        $pathToCompiledTemplates = dirname(__DIR__)
             . DIRECTORY_SEPARATOR
             . self::COMPILER_PATH;
 

@@ -1,0 +1,39 @@
+networks:
+  mvp-widgets:
+    driver: bridge
+services:
+  php-swoole:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    volumes:
+      - .:/var/www
+    ports:
+      - "9501:9501"
+  php-cli:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    container_name: php-cli
+    volumes:
+      - .:/var/www
+    tty: true
+    ports:
+      - "9000:9000"
+    networks:
+      - mvp-widgets
+  nginx:
+    build:
+      context: docker/nginx
+      dockerfile: Dockerfile
+    container_name: nginx
+    restart: unless-stopped
+    depends_on:
+      - php-cli
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/var/www
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - mvp-widgets

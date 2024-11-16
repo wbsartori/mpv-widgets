@@ -16,7 +16,7 @@
     },
     "archive": {
         "exclude": [
-            "widgets/tests",
+            "src/tests",
             ".gitignore",
             "docs",
             ".github",
@@ -48,11 +48,9 @@
     },
     "autoload": {
         "psr-4": {
-            "Dashboards\\Packages\\": "packages",
-            "Dashboards\\": "widgets/src/",
-            "Controllers\\": "Controllers/",
-            "Dashboards\\Examples\\": "examples",
-            "Dashboards\\Tests\\": "widgets/tests/"
+            "Dashboards\\": "src/",
+            "Dashboards\\Examples\\": "examples/",
+            "Dashboards\\Tests\\": "src/tests/"
         }
     },
     "require-dev": {

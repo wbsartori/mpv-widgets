@@ -16,7 +16,7 @@ class Routes
     private const FILENAME = 'web';
     private const PHP_EXTENSION = '.php';
 
-    private const DIRECTORY_ROUTER = 'widgets/src/Routes';
+    private const DIRECTORY_ROUTER = 'src/Routes';
 
     public function routes()
     {
@@ -25,7 +25,7 @@ class Routes
         $container->instance('Illuminate\Http\Request', $request);
         $events = new Dispatcher($container);
         $router = new Router($events, $container);
-        require_once dirname(__DIR__, 2)
+        require_once dirname(__DIR__)
             . DIRECTORY_SEPARATOR
             . self::DIRECTORY_ROUTER
             . DIRECTORY_SEPARATOR

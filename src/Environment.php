@@ -8,7 +8,7 @@ use Dotenv\Dotenv;
 
 class Environment
 {
-    public function __construct(string $filename = '.env', int $directoryLevel = 2)
+    public function __construct(string $filename = '.env', int $directoryLevel = 1)
     {
         (Dotenv::createImmutable(
             dirname(

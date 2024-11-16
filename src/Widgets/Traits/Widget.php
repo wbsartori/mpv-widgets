@@ -1,6 +1,6 @@
 <?php
 
-namespace Dashboards\Widgets\Abstracts;
+namespace Dashboards\Widgets\Traits;
 
 trait Widget
 {

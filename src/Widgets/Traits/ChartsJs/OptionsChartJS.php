@@ -2,17 +2,19 @@
 
 namespace Dashboards\Widgets\Traits\ChartsJs;
 
-use Dashboards\Widgets\Abstracts\Widget;
 use Dashboards\Widgets\BarChartWidget;
-use Dashboards\Widgets\LineChartWidget;
 use Dashboards\Widgets\Charts\Chart;
 use Dashboards\Widgets\Charts\ChartsJs\Configuration;
 use Dashboards\Widgets\Charts\ChartsJs\Datasets;
 use Dashboards\Widgets\Charts\Filter;
+use Dashboards\Widgets\LineChartWidget;
+use Dashboards\Widgets\Traits\Widget;
+use Dashboards\Widgets\Traits\WidgetConfigTrait;
 
 trait OptionsChartJS
 {
     use Widget;
+    use WidgetConfigTrait;
 
     /**
      * @return Chart
