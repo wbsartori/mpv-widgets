@@ -8,12 +8,10 @@ use Dashboards\Widgets\Charts\ChartsJs\Configuration;
 use Dashboards\Widgets\Charts\ChartsJs\Datasets;
 use Dashboards\Widgets\Charts\Filter;
 use Dashboards\Widgets\LineChartWidget;
-use Dashboards\Widgets\Traits\Widget;
 use Dashboards\Widgets\Traits\WidgetConfigTrait;
 
 trait OptionsChartJS
 {
-    use Widget;
     use WidgetConfigTrait;
 
     /**
@@ -23,6 +21,7 @@ trait OptionsChartJS
     {
         return new Chart();
     }
+
     /**
      * @return Configuration
      */

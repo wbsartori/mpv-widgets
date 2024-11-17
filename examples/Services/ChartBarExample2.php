@@ -23,7 +23,7 @@ class ChartBarExample2 implements InterfaceWidget
 
     public function render(): array
     {
-        return $this->chart()
+        return self::chart()
             ->title(self::CARDS['chart']['title'])
             ->name(self::CARDS['chart']['name'])
             ->chart(

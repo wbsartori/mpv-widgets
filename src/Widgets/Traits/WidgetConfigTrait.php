@@ -4,62 +4,50 @@ namespace Dashboards\Widgets\Traits;
 
 trait WidgetConfigTrait
 {
-    protected string $navigationName = 'Home';
-    protected string $navigationIcon = 'heroicon-o-home';
-    protected int $navigationOrder = 1;
-    protected int $navigationRow = 1;
-    protected int $navigationColumn = 1;
+    protected ?string $navigationIcon;
+    protected ?int $navigationOrder;
+    protected ?int $navigationRow;
+    protected ?int $navigationColumn;
 
-    public function getNavigationName(): string
+
+    public function getNavigationIcon(): ?string
     {
-        return $this->navigationName;
+        return $this->navigationIcon ?? 'heroicon-o-home';
     }
 
-    public function setNavigationName(string $navigationName): WidgetConfigTrait
+    public function getNavigationOrder(): ?int
     {
-        $this->navigationName = $navigationName;
-        return $this;
+        return $this->navigationOrder ?? 1;
     }
 
-    public function getNavigationIcon(): string
+    public function getNavigationRow(): ?int
     {
-        return $this->navigationIcon;
+        return $this->navigationRow ?? 1;
     }
 
-    public function setNavigationIcon(string $navigationIcon): WidgetConfigTrait
+    public function getNavigationColumn(): ?int
+    {
+        return $this->navigationColumn ?? 1;
+    }
+    public function setNavigationIcon(?string $navigationIcon): self
     {
         $this->navigationIcon = $navigationIcon;
         return $this;
     }
 
-    public function getNavigationOrder(): int
-    {
-        return $this->navigationOrder;
-    }
-
-    public function setNavigationOrder(int $navigationOrder): WidgetConfigTrait
+    public function setNavigationOrder(?int $navigationOrder): self
     {
         $this->navigationOrder = $navigationOrder;
         return $this;
     }
 
-    public function getNavigationRow(): int
-    {
-        return $this->navigationRow;
-    }
-
-    public function setNavigationRow(int $navigationRow): WidgetConfigTrait
+    public function setNavigationRow(?int $navigationRow): self
     {
         $this->navigationRow = $navigationRow;
         return $this;
     }
 
-    public function getNavigationColumn(): int
-    {
-        return $this->navigationColumn;
-    }
-
-    public function setNavigationColumn(int $navigationColumn): WidgetConfigTrait
+    public function setNavigationColumn(?int $navigationColumn): self
     {
         $this->navigationColumn = $navigationColumn;
         return $this;
