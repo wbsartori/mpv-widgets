@@ -1,11 +1,11 @@
 <?php
 
-namespace Dashboards\Examples\Services;
+namespace Dashboards\Examples\Dashboards\Customers;
 
 use Dashboards\Widgets\Interfaces\InterfaceWidget;
 use Dashboards\Widgets\Traits\ChartsJs\OptionsChartJS;
 
-class ChartBarExample2 implements InterfaceWidget
+class Card3 implements InterfaceWidget
 {
     use OptionsChartJS;
 
@@ -28,7 +28,6 @@ class ChartBarExample2 implements InterfaceWidget
             ->name(self::CARDS['chart']['name'])
             ->chart(
                 $this->addConfiguration()
-                    ->type('doughnut')
                     ->labels([
                         'Janeiro', 'Fevereiro', 'Marco',
                         'Abril', 'Maio', 'Junho', 'Julho',

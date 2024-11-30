@@ -11,7 +11,7 @@ class ChartBarExample implements InterfaceWidget
 
     private const CARDS = [
         'chart' => [
-            'title' => 'Clientes Inativados por mes',
+            'title' => 'Clientes asdasdasdas por mes',
             'name' => 'clientes_inativados_mes'
         ],
     ];
@@ -28,6 +28,7 @@ class ChartBarExample implements InterfaceWidget
             ->name(self::CARDS['chart']['name'])
             ->chart(
                 $this->addConfiguration()
+                    ->type('line')
                     ->labels([
                         'Janeiro', 'Fevereiro', 'Marco',
                         'Abril', 'Maio', 'Junho', 'Julho',
@@ -36,7 +37,7 @@ class ChartBarExample implements InterfaceWidget
                     ->datasets(
                         [
                             [
-                                'label' => 'Ativados',
+                                'label' => 'Ativaaaaaaaaaaaaaados',
                                 'data' => [12, 10, 3, 5, 2, 3, 10, 8, 9, 10, 25, 30],
                                 'borderWidth' => 1,
                                 'backgroundColor' => 'red'

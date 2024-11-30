@@ -2,7 +2,7 @@
 
 return [
     'search_bar' => [
-        'enabled' => true,
+        'enabled' => false,
         'placeholder' => 'Pesquisar...',
         'button' => [
             'label' => 'Buscar',
@@ -18,20 +18,65 @@ return [
             'label' => 'Menu',
         ]
     ],
-    'providers' => [
+    'pages' => [
         '/' => [
-            'cards' => [
-                \Dashboards\Examples\Services\ChartBarExample::class,
-                \Dashboards\Examples\Services\ChartBarExample2::class,
+            '/' => [
+                'name' => 'index',
+                'display' => 'Dashboards',
             ],
-            'navigationName' => 'Home'
+            'new' => [
+                'name' => 'new',
+                'display' => 'Dashboards/Novo',
+            ],
+            'edit' => [
+                'name' => 'edit',
+                'display' => 'Dashboards/Editar',
+            ],
+            'delete' => [
+                'name' => 'index',
+                'display' => 'Dashboards',
+            ],
         ],
-        'financeiro' => [
-            'cards' => [
-                \Dashboards\Examples\Services\ChartBarExample::class,
-                \Dashboards\Examples\Services\ChartBarExample2::class,
-            ],
-            'navigationName' => 'Financeiro'
+        'dashboards/cards' => [
+            'dashboards/cards' => [
+                'index' => [
+                    'name' => 'index',
+                    'display' => 'Dashboards',
+                ],
+                'new' => [
+                    'name' => 'new',
+                    'display' => 'Dashboards/Novo',
+                ],
+                'edit' => [
+                    'name' => 'edit',
+                    'display' => 'Dashboards/Editar',
+                ],
+                'delete' => [
+                    'name' => 'index',
+                    'display' => 'Dashboards',
+                ],
+            ]
         ],
     ]
+
+//    'dashboards' => [
+//        '/' => [
+//            'cards' => [
+//                \Dashboards\Examples\Services\ChartBarExample::class,
+//                \Dashboards\Examples\Services\ChartBarExample2::class,
+//                \Dashboards\Examples\Services\ChartBarExample2::class,
+//            ],
+//            'navigationName' => 'Home'
+//        ],
+//        'financeiro' => [
+//            'cards' => [
+//                \Dashboards\Examples\Services\ChartBarExample::class,
+//                \Dashboards\Examples\Services\ChartBarExample::class,
+//                \Dashboards\Examples\Services\ChartBarExample::class,
+//                \Dashboards\Examples\Services\ChartBarExample2::class,
+//                \Dashboards\Examples\Services\ChartBarExample2::class,
+//            ],
+//            'navigationName' => 'Financeiro'
+//        ],
+//    ]
 ];

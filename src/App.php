@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Dashboards;
 
 use Illuminate\Container\Container;

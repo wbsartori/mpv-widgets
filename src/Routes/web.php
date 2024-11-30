@@ -20,19 +20,29 @@ $router = new Router(new Dispatcher());
 | Each dashboard must have a controller and for each dashboard card a method must be added to the controller
 |
 */
-$router->group([
-    'namespace' => '\\Dashboards\\Controllers',
-    'prefix' => '/'
-], function (Router $router) {
-    $configFile = require_once dirname(__DIR__, 2) . '/config/dashboards.php';
-    $providers = \Dashboards\Helpers\ProvidersHelper::make($configFile)->handleCards();
-    $router->get("{$providers['uri']}", function (Request $request) use ($providers) {
-        $charts = $providers['charts'];
-        $quantity = 3;
-        $controller = new \Dashboards\Controllers\BaseController();
-        $controller->views('index', compact('charts', 'quantity'));
-    });
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+
+
+$router->get('/cadastro', function (Request $request) {
+    $controller = new \Dashboards\Controllers\BaseController();
+    $controller->views('register');
 });
+
+//$router->group([
+//    'namespace' => '\\Dashboards\\Controllers',
+//    'prefix' => '/'
+//], function (Router $router) {
+//    $configFile = require_once dirname(__DIR__, 2) . '/config/dashboards.php';
+//    $providers = \Dashboards\Helpers\ProvidersHelper::make($configFile)->handlePages();
+//    $router->get("{$providers['uri']}", function (Request $request) use ($providers) {
+//        $charts = $providers['charts'];
+//        $quantity = 3;
+//        $controller = new \Dashboards\Controllers\BaseController();
+//        $controller->views('index', compact('charts', 'quantity'));
+//    });
+//});
 
 /*
 |--------------------------------------------------------------------------
