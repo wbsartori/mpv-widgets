@@ -13,7 +13,6 @@ use Dashboards\Widgets\Interfaces\ConfigurationInterface;
 
 abstract class OptionsChartJS
 {
-
     /**
      * @return ChartInterface
      */

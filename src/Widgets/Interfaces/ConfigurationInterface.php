@@ -6,7 +6,6 @@ namespace Dashboards\Widgets\Interfaces;
 
 interface ConfigurationInterface
 {
-
     /**
      * @return array[]
      */

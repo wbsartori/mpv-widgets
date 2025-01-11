@@ -9,7 +9,6 @@ use Dashboards\Widgets\OptionsChartJS;
 
 class Example05 extends OptionsChartJS implements InterfaceWidget
 {
-
     private const CARDS = [
         'chart' => [
             'title' => 'Clientes Inativados por mes 2',
