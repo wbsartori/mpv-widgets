@@ -6,3 +6,6 @@
 /.gitattributes export-ignore
 /index.php export-ignore
 /assets export-ignore
+/docker export-ignore
+/composer.lock export-ignore
+/phpunit.xml export-ignore
