@@ -1,5 +1,5 @@
 {
-    "name": "wbsartori/mvp-back-end",
+    "name": "wbsartori/mvp-widgets",
     "type": "library",
     "description": "Package for abstracting dashboards with php",
     "license": "proprietary",
