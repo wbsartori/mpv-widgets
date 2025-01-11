@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 namespace Dashboards\Widgets\Charts;
 
-class Chart
+use Dashboards\Widgets\Interfaces\ChartInterface;
+use Dashboards\Widgets\Interfaces\ConfigurationInterface;
+use Dashboards\Widgets\Interfaces\FilterInterface;
+
+class Chart implements ChartInterface
 {
     /**
      * @var string
@@ -57,22 +61,22 @@ class Chart
     }
 
     /**
-     * @param array $chart
+     * @param ConfigurationInterface $configurationInterface
      * @return Chart
      */
-    public function chart(array $chart): Chart
+    public function chart(ConfigurationInterface $configurationInterface): Chart
     {
-        $this->chart = $chart;
+        $this->chart = $configurationInterface->get();
         return $this;
     }
 
     /**
-     * @param array $filters
-     * @return Chart
+     * @param FilterInterface $filterInterface
+     * @return $this]
      */
-    public function filters(array $filters): Chart
+    public function filters(FilterInterface $filterInterface): Chart
     {
-        $this->filters = $filters;
+        $this->filters = $filterInterface->get();
         return $this;
     }
 }

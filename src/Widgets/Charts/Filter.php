@@ -4,8 +4,14 @@ declare(strict_types=1);
 
 namespace Dashboards\Widgets\Charts;
 
-class Filter
+use Dashboards\Widgets\Interfaces\FilterInterface;
+
+class Filter implements FilterInterface
 {
+    private const TYPES = [
+        0 => 'addFilter',
+        1 => 'addBetweenFilter',
+    ];
     /**
      * @var array
      */
@@ -42,26 +48,18 @@ class Filter
      * @var string
      */
     private $addOperator = '';
-
     /**
      * @var string
      */
     private $type = '';
-
     /**
      * @var string
      */
     private $group = '';
-
     /**
      * @var string
      */
     private $condition = '';
-
-    private const TYPES = [
-        0 => 'addFilter',
-        1 => 'addBetweenFilter'
-    ];
 
     /**
      * @Annotation{'display_campo' => NomeCampo,'display_valor' => valor,'display_operador' => '=',
@@ -166,6 +164,31 @@ class Filter
     public function setFilter(array $filters)
     {
         $this->filter[] = $filters;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAddGroup(): string
+    {
+        return $this->group;
+    }
+
+    /**
+     * @param string $group
+     * @return void
+     */
+    public function setAddGroup(string $group): void
+    {
+        $this->group = $group;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAddCondition(): string
+    {
+        return $this->condition;
     }
 
     /**
@@ -294,31 +317,6 @@ class Filter
     private function setAddBetweenDisplayValue(array $addBetweenDisplayValue): void
     {
         $this->addBetweenDisplayValue = $addBetweenDisplayValue;
-    }
-
-    /**
-     * @return string
-     */
-    public function getAddGroup(): string
-    {
-        return $this->group;
-    }
-
-    /**
-     * @param string $group
-     * @return void
-     */
-    public function setAddGroup(string $group): void
-    {
-        $this->group = $group;
-    }
-
-    /**
-     * @return string
-     */
-    public function getAddCondition(): string
-    {
-        return $this->condition;
     }
 
     /**

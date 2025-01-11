@@ -4,17 +4,19 @@ declare(strict_types=1);
 
 namespace Dashboards\Widgets\Charts\ChartsJs;
 
-class Color
+use Dashboards\Widgets\Interfaces\ColorInterface;
+
+class Color implements ColorInterface
 {
     /**
      * @var string {rgba}
      */
-    private $backgroundColor;
+    private string $backgroundColor;
 
     /**
      * @var string {rgba}
      */
-    private $borderColor;
+    private string $borderColor;
 
     /**
      * @var string {#hexa}
@@ -25,7 +27,7 @@ class Color
      * @param string $backgroundColor
      * @return Color
      */
-    public function backgroundColor(string $backgroundColor): Color
+    public function backgroundColor(string $backgroundColor): ColorInterface
     {
         $this->backgroundColor = $backgroundColor;
         return $this;
@@ -35,7 +37,7 @@ class Color
      * @param string $borderColor
      * @return Color
      */
-    public function borderColor(string $borderColor): Color
+    public function borderColor(string $borderColor): ColorInterface
     {
         $this->borderColor = $borderColor;
         return $this;
@@ -45,7 +47,7 @@ class Color
      * @param string $color
      * @return Color
      */
-    public function color(string $color): Color
+    public function color(string $color): ColorInterface
     {
         $this->color = $color;
         return $this;

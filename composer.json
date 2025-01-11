@@ -1,7 +1,7 @@
 {
     "name": "wbsartori/mvp-back-end",
     "type": "library",
-    "description": "Package for abstracting javascript dashboards with php",
+    "description": "Package for abstracting dashboards with php",
     "license": "proprietary",
     "minimum-stability": "stable",
     "prefer-stable": true,
@@ -16,7 +16,7 @@
     },
     "archive": {
         "exclude": [
-            "src/tests",
+          "tests",
             ".gitignore",
             "docs",
             ".github",
@@ -25,7 +25,7 @@
     },
     "config": {
         "platform": {
-            "php": "7.3"
+            "php": "7.4"
         }
     },
     "authors": [
@@ -38,19 +38,13 @@
         "ext-json": "*",
         "ext-pdo": "*",
         "ext-mbstring": "*",
-        "illuminate/container": "^8.83",
-        "illuminate/contracts": "^8.83",
-        "illuminate/events": "^8.83",
-        "illuminate/filesystem": "^8.83",
-        "illuminate/view": "^8.83",
-        "illuminate/routing": "^8.83",
         "vlucas/phpdotenv": "^4.2"
     },
     "autoload": {
         "psr-4": {
             "Dashboards\\": "src/",
             "Dashboards\\Examples\\": "examples/",
-            "Dashboards\\Tests\\": "src/tests/"
+            "Dashboards\\Tests\\": "tests/"
         }
     },
     "require-dev": {

@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Dashboards\Widgets\Charts\ChartsJs;
 
-class Configuration
+use Dashboards\Widgets\Interfaces\ConfigurationInterface;
+
+class Configuration implements ConfigurationInterface
 {
     /**
      * @var string
@@ -39,7 +41,7 @@ class Configuration
         $data['plugins'] = $this->plugins ?? '';
         return [
             'type' => $this->type ?? 'bar',
-            'data' => array_filter($data)
+            'data' => array_filter($data),
         ];
     }
 

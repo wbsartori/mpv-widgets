@@ -4,49 +4,51 @@ declare(strict_types=1);
 
 namespace Dashboards\Widgets\Charts\ChartsJs;
 
-class Datasets
+use Dashboards\Widgets\Interfaces\DatasetsInterface;
+
+class Datasets implements DatasetsInterface
 {
     /**
      * @var Color
      */
-    private $backgroundColor;
+    private Color $backgroundColor;
 
     /**
-     * @var numeric
+     * @var float
      */
-    private $base;
+    private float $base;
 
     /**
-     * @var numeric
+     * @var float
      */
-    private $barPercentage;
+    private float $barPercentage;
 
     /**
-     * @var numeric|string
+     * @var float|string
      */
     private $barThickness;
 
     /**
      * @var Color
      */
-    private $borderColor;
+    private Color $borderColor;
 
     /**
      * @var string|boolean
      */
     private $borderSkipped;
     /**
-     * @var numeric|object
+     * @var float|object
      */
     private $borderWidth;
     /**
-     * @var numeric|object
+     * @var float|object
      */
     private $borderRadius;
     /**
-     * @var numeric
+     * @var float
      */
-    private $categoryPercentage;
+    private float $categoryPercentage;
     /**
      * @var number|object|false
      */
@@ -58,77 +60,77 @@ class Datasets
     /**
      * @var boolean
      */
-    private $grouped;
+    private bool $grouped;
     /**
      * @var Color
      */
-    private $hoverBackgroundColor;
+    private Color $hoverBackgroundColor;
     /**
      * @var Color
      */
-    private $hoverBorderColor;
+    private Color $hoverBorderColor;
     /**
-     * @var numeric
+     * @var float
      */
-    private $hoverBorderWidth;
+    private float $hoverBorderWidth;
     /**
-     * @var numeric
+     * @var float
      */
-    private $hoverBorderRadius;
+    private float $hoverBorderRadius;
     /**
      * @var string
      */
-    private $indexAxis;
+    private string $indexAxis;
     /**
      * @var number|'auto'
      */
     private $inflateAmount;
     /**
-     * @var numeric
+     * @var float
      */
-    private $maxBarThickness;
+    private float $maxBarThickness;
     /**
-     * @var numeric
+     * @var float
      */
-    private $minBarLength;
-    /**
-     * @var string
-     */
-    private $label;
-    /**
-     * @var numeric
-     */
-    private $order;
+    private float $minBarLength;
     /**
      * @var string
      */
-    private $pointStyle;
+    private string $label;
+    /**
+     * @var float
+     */
+    private float $order;
+    /**
+     * @var string
+     */
+    private string $pointStyle;
     /**
      * @var boolean
      */
-    private $skipNull;
+    private bool $skipNull;
     /**
      * @var string
      */
-    private $stack;
+    private string $stack;
     /**
      * @var string
      */
-    private $xAxisID;
+    private string $xAxisID;
     /**
      * @var string
      */
-    private $yAxisID;
+    private string $yAxisID;
 
     /**
      * @var array
      */
-    private $datasets = [];
+    private array $datasets = [];
 
     /**
      * @return Datasets
      */
-    public function push(): Datasets
+    public function push(): DatasetsInterface
     {
         $datasets = [];
         $datasets['backgroundColor'] = $this->backgroundColor ?? '';
@@ -162,7 +164,7 @@ class Datasets
         return $this;
     }
 
-    public function backgroundColor(Color $backgroundColor): Datasets
+    public function backgroundColor(Color $backgroundColor): DatasetsInterface
     {
         $this->backgroundColor = $backgroundColor;
         return $this;
@@ -172,7 +174,7 @@ class Datasets
      * @param float|int|string $base
      * @return Datasets
      */
-    public function base($base): Datasets
+    public function base($base): DatasetsInterface
     {
         $this->base = $base;
         return $this;
@@ -182,7 +184,7 @@ class Datasets
      * @param float|int|string $barPercentage
      * @return Datasets
      */
-    public function barPercentage($barPercentage): Datasets
+    public function barPercentage($barPercentage): DatasetsInterface
     {
         $this->barPercentage = $barPercentage;
         return $this;
@@ -192,13 +194,13 @@ class Datasets
      * @param float|int|string $barThickness
      * @return Datasets
      */
-    public function barThickness($barThickness): Datasets
+    public function barThickness($barThickness): DatasetsInterface
     {
         $this->barThickness = $barThickness;
         return $this;
     }
 
-    public function borderColor(Color $borderColor): Datasets
+    public function borderColor(Color $borderColor): DatasetsInterface
     {
         $this->borderColor = $borderColor;
         return $this;
@@ -208,7 +210,7 @@ class Datasets
      * @param bool|string $borderSkipped
      * @return Datasets
      */
-    public function borderSkipped($borderSkipped): Datasets
+    public function borderSkipped($borderSkipped): DatasetsInterface
     {
         $this->borderSkipped = $borderSkipped;
         return $this;
@@ -218,7 +220,7 @@ class Datasets
      * @param float|int|object|string $borderWidth
      * @return Datasets
      */
-    public function borderWidth($borderWidth): Datasets
+    public function borderWidth($borderWidth): DatasetsInterface
     {
         $this->borderWidth = $borderWidth;
         return $this;
@@ -228,7 +230,7 @@ class Datasets
      * @param float|int|object|string $borderRadius
      * @return Datasets
      */
-    public function borderRadius($borderRadius): Datasets
+    public function borderRadius($borderRadius): DatasetsInterface
     {
         $this->borderRadius = $borderRadius;
         return $this;
@@ -238,7 +240,7 @@ class Datasets
      * @param float|int|string $categoryPercentage
      * @return Datasets
      */
-    public function categoryPercentage($categoryPercentage): Datasets
+    public function categoryPercentage($categoryPercentage): DatasetsInterface
     {
         $this->categoryPercentage = $categoryPercentage;
         return $this;
@@ -248,7 +250,7 @@ class Datasets
      * @param false|number|object $clip
      * @return Datasets
      */
-    public function clip($clip): Datasets
+    public function clip($clip): DatasetsInterface
     {
         $this->clip = $clip;
         return $this;
@@ -258,25 +260,25 @@ class Datasets
      * @param array $data
      * @return Datasets
      */
-    public function data(array $data): Datasets
+    public function data(array $data): DatasetsInterface
     {
         $this->data = $data;
         return $this;
     }
 
-    public function grouped(bool $grouped): Datasets
+    public function grouped(bool $grouped): DatasetsInterface
     {
         $this->grouped = $grouped;
         return $this;
     }
 
-    public function hoverBackgroundColor(Color $hoverBackgroundColor): Datasets
+    public function hoverBackgroundColor(Color $hoverBackgroundColor): DatasetsInterface
     {
         $this->hoverBackgroundColor = $hoverBackgroundColor;
         return $this;
     }
 
-    public function hoverBorderColor(Color $hoverBorderColor): Datasets
+    public function hoverBorderColor(Color $hoverBorderColor): DatasetsInterface
     {
         $this->hoverBorderColor = $hoverBorderColor;
         return $this;
@@ -286,7 +288,7 @@ class Datasets
      * @param float|int|string $hoverBorderWidth
      * @return Datasets
      */
-    public function hoverBorderWidth($hoverBorderWidth): Datasets
+    public function hoverBorderWidth($hoverBorderWidth): DatasetsInterface
     {
         $this->hoverBorderWidth = $hoverBorderWidth;
         return $this;
@@ -296,19 +298,19 @@ class Datasets
      * @param float|int|string $hoverBorderRadius
      * @return Datasets
      */
-    public function hoverBorderRadius($hoverBorderRadius): Datasets
+    public function hoverBorderRadius($hoverBorderRadius): DatasetsInterface
     {
         $this->hoverBorderRadius = $hoverBorderRadius;
         return $this;
     }
 
-    public function indexAxis(string $indexAxis): Datasets
+    public function indexAxis(string $indexAxis): DatasetsInterface
     {
         $this->indexAxis = $indexAxis;
         return $this;
     }
 
-    public function inflateAmount(string $inflateAmount): Datasets
+    public function inflateAmount(string $inflateAmount): DatasetsInterface
     {
         $this->inflateAmount = $inflateAmount;
         return $this;
@@ -318,7 +320,7 @@ class Datasets
      * @param float|int|string $maxBarThickness
      * @return Datasets
      */
-    public function maxBarThickness($maxBarThickness): Datasets
+    public function maxBarThickness($maxBarThickness): DatasetsInterface
     {
         $this->maxBarThickness = $maxBarThickness;
         return $this;
@@ -328,13 +330,13 @@ class Datasets
      * @param float|int|string $minBarLength
      * @return Datasets
      */
-    public function minBarLength($minBarLength): Datasets
+    public function minBarLength($minBarLength): DatasetsInterface
     {
         $this->minBarLength = $minBarLength;
         return $this;
     }
 
-    public function label(string $label): Datasets
+    public function label(string $label): DatasetsInterface
     {
         $this->label = $label;
         return $this;
@@ -344,37 +346,37 @@ class Datasets
      * @param float|int|string $order
      * @return Datasets
      */
-    public function order($order): Datasets
+    public function order($order): DatasetsInterface
     {
         $this->order = $order;
         return $this;
     }
 
-    public function pointStyle(string $pointStyle): Datasets
+    public function pointStyle(string $pointStyle): DatasetsInterface
     {
         $this->pointStyle = $pointStyle;
         return $this;
     }
 
-    public function skipNull(bool $skipNull): Datasets
+    public function skipNull(bool $skipNull): DatasetsInterface
     {
         $this->skipNull = $skipNull;
         return $this;
     }
 
-    public function stack(string $stack): Datasets
+    public function stack(string $stack): DatasetsInterface
     {
         $this->stack = $stack;
         return $this;
     }
 
-    public function xAxisID(string $xAxisID): Datasets
+    public function xAxisID(string $xAxisID): DatasetsInterface
     {
         $this->xAxisID = $xAxisID;
         return $this;
     }
 
-    public function yAxisID(string $yAxisID): Datasets
+    public function yAxisID(string $yAxisID): DatasetsInterface
     {
         $this->yAxisID = $yAxisID;
         return $this;
