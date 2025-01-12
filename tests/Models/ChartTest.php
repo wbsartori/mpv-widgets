@@ -2,7 +2,7 @@
 
 namespace Dashboards\Tests\Models;
 
-use Dashboards\Widgets\Charts\Chart;
+use Dashboards\Widgets\Charts\ChartsJs\ChartJS;
 use Dashboards\Widgets\Charts\ChartsJs\Configuration;
 use Dashboards\Widgets\Charts\Filter;
 use Dashboards\Widgets\Interfaces\ChartInterface;
@@ -12,7 +12,7 @@ class ChartTest extends TestCase
 {
     public function testGet()
     {
-        $chart = new Chart();
+        $chart = new ChartJS();
         $current = $chart->chart(
             (new Configuration())
                 ->type('line')

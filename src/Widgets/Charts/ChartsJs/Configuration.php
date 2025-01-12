@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Dashboards\Widgets\Charts\ChartsJs;
 
-use Dashboards\Widgets\Interfaces\ConfigurationInterface;
+use Dashboards\Widgets\Charts\ChartsJs\Interfaces\ChartJSConfigurationInterface;
 
-class Configuration implements ConfigurationInterface
+class Configuration implements ChartJSConfigurationInterface
 {
     /**
      * @var string

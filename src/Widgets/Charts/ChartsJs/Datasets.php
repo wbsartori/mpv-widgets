@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace Dashboards\Widgets\Charts\ChartsJs;
 
+use Dashboards\Widgets\Charts\ChartsJs\Interfaces\ChartJsDatasetsInterface;
 use Dashboards\Widgets\Interfaces\DatasetsInterface;
 
-class Datasets implements DatasetsInterface
+class Datasets implements ChartJsDatasetsInterface
 {
     /**
      * @var Color

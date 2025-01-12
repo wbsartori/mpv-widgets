@@ -53,10 +53,10 @@ class BarChartWidget
             'type' => $this->type ?? 'bar',
             'options' => [
                 'legend' => [
-                    'position' => 'top'
+                    'position' => 'top',
                 ],
                 'tooltips' => [
-                    'mode' => 'index'
+                    'mode' => 'index',
                 ],
                 'plugins' => [
                     'datalabels' => [
@@ -67,19 +67,19 @@ class BarChartWidget
                         'color' => 'black',
                         'font' => [
                             'weight' => 'bold',
-                            'size' => 8
+                            'size' => 8,
                         ],
                         'formatter' => 'Math.round',
-                    ]
+                    ],
                 ],
                 'layout' => [
                     'padding' => [
                         'left' => 10,
                         'right' => 10,
                         'top' => 0,
-                        'bottom' => 10
-                    ]
-                ]
+                        'bottom' => 10,
+                    ],
+                ],
             ],
         ];
     }

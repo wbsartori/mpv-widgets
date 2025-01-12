@@ -78,10 +78,10 @@ class LineChartWidget
         'type' => 'line',
         'options' => [
             'legend' => [
-                'position' => 'top'
+                'position' => 'top',
             ],
             'tooltips' => [
-                'mode' => 'index'
+                'mode' => 'index',
             ],
             'plugins' => [
                 'datalabels' => [
@@ -92,19 +92,19 @@ class LineChartWidget
                     'color' => 'black',
                     'font' => [
                         'weight' => 'bold',
-                        'size' => 8
+                        'size' => 8,
                     ],
                     'formatter' => 'Math.round',
-                ]
+                ],
             ],
             'layout' => [
                 'padding' => [
                     'left' => 10,
                     'right' => 10,
                     'top' => 0,
-                    'bottom' => 10
-                ]
-            ]
+                    'bottom' => 10,
+                ],
+            ],
         ],
     ];
 
@@ -115,7 +115,7 @@ class LineChartWidget
     public function type(string $type): LineChartWidget
     {
         $this->type = $type;
-        return  $this;
+        return $this;
     }
 
     /**
@@ -124,13 +124,13 @@ class LineChartWidget
     public function tension($tension): LineChartWidget
     {
         $this->tension = $tension;
-        return  $this;
+        return $this;
     }
 
     public function backgroundColor(string $backgroundColor): LineChartWidget
     {
         $this->backgroundColor = $backgroundColor;
-        return  $this;
+        return $this;
     }
 
     /**
@@ -139,25 +139,25 @@ class LineChartWidget
     public function borderWidth($borderWidth): LineChartWidget
     {
         $this->borderWidth = $borderWidth;
-        return  $this;
+        return $this;
     }
 
     public function borderColor(string $borderColor): LineChartWidget
     {
         $this->borderColor = $borderColor;
-        return  $this;
+        return $this;
     }
 
     public function borderCapStyle(string $borderCapStyle): LineChartWidget
     {
         $this->borderCapStyle = $borderCapStyle;
-        return  $this;
+        return $this;
     }
 
     public function borderDash(array $borderDash): LineChartWidget
     {
         $this->borderDash = $borderDash;
-        return  $this;
+        return $this;
     }
 
     /**
@@ -166,25 +166,25 @@ class LineChartWidget
     public function borderDashOffset($borderDashOffset): LineChartWidget
     {
         $this->borderDashOffset = $borderDashOffset;
-        return  $this;
+        return $this;
     }
 
     public function borderJoinStyle(string $borderJoinStyle): LineChartWidget
     {
         $this->borderJoinStyle = $borderJoinStyle;
-        return  $this;
+        return $this;
     }
 
     public function capBezierPoints(bool $capBezierPoints): LineChartWidget
     {
         $this->capBezierPoints = $capBezierPoints;
-        return  $this;
+        return $this;
     }
 
     public function cubicInterpolationMode(string $cubicInterpolationMode): LineChartWidget
     {
         $this->cubicInterpolationMode = $cubicInterpolationMode;
-        return  $this;
+        return $this;
     }
 
     /**
@@ -193,13 +193,13 @@ class LineChartWidget
     public function fill($fill): LineChartWidget
     {
         $this->fill = $fill;
-        return  $this;
+        return $this;
     }
 
     public function stepped(bool $stepped): LineChartWidget
     {
         $this->stepped = $stepped;
-        return  $this;
+        return $this;
     }
 
     /**
@@ -209,6 +209,6 @@ class LineChartWidget
     public function line(array $line): LineChartWidget
     {
         $this->line = $line;
-        return  $this;
+        return $this;
     }
 }

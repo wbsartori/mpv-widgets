@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Dashboards\Widgets;
 
-use Dashboards\Widgets\Charts\Chart;
+use Dashboards\Widgets\Charts\ChartsJs\ChartJS;
 use Dashboards\Widgets\Charts\ChartsJs\Configuration;
 use Dashboards\Widgets\Charts\ChartsJs\Datasets;
 use Dashboards\Widgets\Charts\Filter;
@@ -18,7 +18,7 @@ abstract class OptionsChartJS
      */
     public function chart(): ChartInterface
     {
-        return new Chart();
+        return new ChartJS();
     }
 
     /**

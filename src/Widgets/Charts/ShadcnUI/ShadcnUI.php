@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Dashboards\Widgets\Charts;
+namespace Dashboards\Widgets\Charts\ShadcnUI;
 
 use Dashboards\Widgets\Interfaces\ChartInterface;
 use Dashboards\Widgets\Interfaces\ConfigurationInterface;
 use Dashboards\Widgets\Interfaces\FilterInterface;
 
-class Chart implements ChartInterface
+class ShadcnUI implements ChartInterface
 {
     /**
      * @var string
@@ -27,9 +27,6 @@ class Chart implements ChartInterface
      */
     private $filters;
 
-    /**
-     * @return array
-     */
     public function get(): array
     {
         return [
@@ -40,41 +37,25 @@ class Chart implements ChartInterface
         ];
     }
 
-    /**
-     * @param string $title
-     * @return Chart
-     */
-    public function title(string $title): Chart
+    public function title(string $title): ShadcnUI
     {
         $this->title = $title;
         return $this;
     }
 
-    /**
-     * @param string $name
-     * @return Chart
-     */
-    public function name(string $name): Chart
+    public function name(string $name): ShadcnUI
     {
         $this->name = $name;
         return $this;
     }
 
-    /**
-     * @param ConfigurationInterface $configurationInterface
-     * @return Chart
-     */
-    public function chart(ConfigurationInterface $configurationInterface): Chart
+    public function chart(ConfigurationInterface $configurationInterface): ShadcnUI
     {
         $this->chart = $configurationInterface->get();
         return $this;
     }
 
-    /**
-     * @param FilterInterface $filterInterface
-     * @return $this]
-     */
-    public function filters(FilterInterface $filterInterface): Chart
+    public function filters(FilterInterface $filterInterface): ShadcnUI
     {
         $this->filters = $filterInterface->get();
         return $this;

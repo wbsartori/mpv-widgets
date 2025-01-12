@@ -10,6 +10,7 @@ interface InterfaceWidget
      * @return array
      */
     public function query(): array;
+
     /**
      * @return array
      */

@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Dashboards\Widgets\Interfaces;
 
-use Dashboards\Widgets\Charts\Chart;
-
 interface ChartInterface
 {
     /**
