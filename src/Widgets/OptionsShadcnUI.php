@@ -6,8 +6,10 @@ namespace Dashboards\Widgets;
 
 use Dashboards\Widgets\Charts\Filter;
 use Dashboards\Widgets\Charts\ShadcnUI\Configuration;
+use Dashboards\Widgets\Charts\ShadcnUI\Interfaces\ShadcnUIConfigurationInterface;
 use Dashboards\Widgets\Charts\ShadcnUI\ShadcnUI;
 use Dashboards\Widgets\Interfaces\ChartInterface;
+use Dashboards\Widgets\Interfaces\FilterInterface;
 
 abstract class OptionsShadcnUI
 {
@@ -17,7 +19,7 @@ abstract class OptionsShadcnUI
         return new ShadcnUI();
     }
 
-    public function addConfiguration(): Configuration
+    public function addConfiguration(): ShadcnUIConfigurationInterface
     {
         return new Configuration();
     }
@@ -25,7 +27,7 @@ abstract class OptionsShadcnUI
     /**
      * @return Filter
      */
-    public function addFilters(): Filter
+    public function addFilters(): FilterInterface
     {
         return new Filter();
     }

@@ -41,11 +41,11 @@ class Example01 extends OptionsShadcnUI implements InterfaceWidget
                         [
                             'ativo' => [
                                 'label' => 'Janeiro',
-                                'color' => 'hsl(var(--chart-1))'
+                                'color' => '#ff5733'
                             ],
                             'inativo' => [
                                 'label' => 'Fevereiro',
-                                'color' => 'hsl(var(--chart-2))'
+                                'color' => '#053e2a'
                             ],
                         ]
                     )
