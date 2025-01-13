@@ -10,8 +10,9 @@ use Dashboards\Widgets\Charts\ShadcnUI\Interfaces\ShadcnUIConfigurationInterface
 use Dashboards\Widgets\Charts\ShadcnUI\ShadcnUI;
 use Dashboards\Widgets\Interfaces\ChartInterface;
 use Dashboards\Widgets\Interfaces\FilterInterface;
+use Dashboards\Widgets\Interfaces\OptionsInterface;
 
-abstract class OptionsShadcnUI
+abstract class OptionsShadcnUI implements OptionsInterface
 {
 
     public function chart(): ChartInterface
