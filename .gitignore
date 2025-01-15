@@ -9,3 +9,4 @@ go-pear.phar
 compiled
 node_modules
 config
+coverage

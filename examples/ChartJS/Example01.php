@@ -68,6 +68,17 @@ class Example01 extends OptionsChartJS implements InterfaceWidget
                         ],
                     ])
             )
+            ->components(
+                [
+                    $this->addComponents()->button()->name('Botão de ação 1'),
+                    $this->addComponents()->button()->name('Botão de ação 2'),
+                    $this->addComponents()->selectButton()->name('Botão de ação 3')->options([
+                        'filial1' => 'Filial1',
+                        'filial2' => 'Filial2',
+                        'filial3' => 'Filial3',
+                    ])
+                ]
+            )
             ->filters(
                 $this->addFilters()
                     ->filter('teste', '=', 'teste', 'teste', '=', 'teste')

@@ -97,7 +97,7 @@ class LineChartWidget
                     'formatter' => 'Math.round',
                 ],
             ],
-            'layout' => [
+            'layouts' => [
                 'padding' => [
                     'left' => 10,
                     'right' => 10,

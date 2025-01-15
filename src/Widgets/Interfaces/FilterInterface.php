@@ -15,7 +15,7 @@ interface FilterInterface
         string $value,
         string $group = '',
         string $condition = ''
-    ): Filter;
+    ): FilterInterface;
 
     public function betweenFilter(
         string $displayField,
@@ -26,7 +26,7 @@ interface FilterInterface
         array $value,
         string $group = '',
         string $condition = ''
-    ): Filter;
+    ): FilterInterface;
 
     /**
      * @return array
@@ -34,20 +34,4 @@ interface FilterInterface
     public function get(): array;
 
     public function setFilter(array $filters);
-
-    /**
-     * @return string
-     */
-    public function getAddGroup(): string;
-
-    /**
-     * @param string $group
-     * @return void
-     */
-    public function setAddGroup(string $group): void;
-
-    /**
-     * @return string
-     */
-    public function getAddCondition(): string;
 }

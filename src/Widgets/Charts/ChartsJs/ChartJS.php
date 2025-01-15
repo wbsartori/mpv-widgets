@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Dashboards\Widgets\Charts\ChartsJs;
 
 use Dashboards\Widgets\Interfaces\ChartInterface;
+use Dashboards\Widgets\Interfaces\ComponentsInterface;
 use Dashboards\Widgets\Interfaces\ConfigurationInterface;
 use Dashboards\Widgets\Interfaces\FilterInterface;
 
@@ -13,29 +14,42 @@ class ChartJS implements ChartInterface
     /**
      * @var string
      */
-    private $title;
+    private string $title;
     /**
      * @var string
      */
-    private $name;
+    private string $name;
     /**
      * @var array
      */
-    private $chart;
+    private array $chart;
     /**
      * @var array
      */
-    private $filters;
+    private array $filters;
+
+    /**
+     * @var array
+     */
+    private array $components = [];
 
     /**
      * @return array
      */
     public function get(): array
     {
+        $components = [];
+        if($this->components !== []) {
+            foreach ($this->components as $component) {
+                $components[] = $component->get();
+            }
+        }
+
         return [
             'title' => $this->title,
             'name' => $this->name,
             'chart' => $this->chart,
+            'components' => $components,
             'filters' => $this->filters,
         ];
     }
@@ -77,6 +91,16 @@ class ChartJS implements ChartInterface
     public function filters(FilterInterface $filterInterface): ChartJS
     {
         $this->filters = $filterInterface->get();
+        return $this;
+    }
+
+    /**
+     * @param array<ComponentsInterface> $components
+     * @return ChartJS
+     */
+    public function components(array $components = []): ChartJS
+    {
+        $this->components = $components;
         return $this;
     }
 }

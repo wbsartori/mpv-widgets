@@ -14,7 +14,6 @@ use Dashboards\Widgets\Interfaces\OptionsInterface;
 
 abstract class OptionsShadcnUI implements OptionsInterface
 {
-
     public function chart(): ChartInterface
     {
         return new ShadcnUI();

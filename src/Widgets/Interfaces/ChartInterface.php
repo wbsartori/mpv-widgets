@@ -34,4 +34,10 @@ interface ChartInterface
      * @return ChartInterface
      */
     public function filters(FilterInterface $filterInterface): ChartInterface;
+
+    /**
+     * @param array<ComponentsInterface> $components
+     * @return ChartInterface
+     */
+    public function components(array $components = []): ChartInterface;
 }

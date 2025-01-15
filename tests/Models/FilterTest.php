@@ -47,4 +47,56 @@ class FilterTest extends TestCase
         $current = $filter->filter('DisplayField', '=', 'DisplayValue', 'Field', '=', 'Value')->get();
         self::assertEquals($expected, $current);
     }
+
+    public function testBetweenFilterWithGroup()
+    {
+        $filter = new Filter();
+        $current = $filter->betweenFilter(
+            'DisplayField',
+            '=',
+            ['one', 'two'],
+            'Field',
+            '=',
+            [1, 2],
+            '1'
+        );
+
+        self::assertInstanceOf(Filter::class, $current);
+    }
+
+    public function testBetweenFilterWithCondition()
+    {
+        $filter = new Filter();
+        $name = 'manezinho';
+        $current = $filter->betweenFilter(
+            'DisplayField',
+            '=',
+            ['one', 'two'],
+            'Field',
+            '=',
+            [1, 2],
+            '1',
+            $name === 'manezinho' ?? ''
+
+        );
+        self::assertInstanceOf(Filter::class, $current);
+    }
+
+    public function testFilterWithGroupAndCondition()
+    {
+        $filter = new Filter();
+        $name = 'manezinho';
+        $current = $filter->filter(
+            'DisplayField',
+            '=',
+            'one',
+            'Field',
+            '=',
+            1,
+            'C',
+            $name == 'manezinho' ?? ''
+
+        );
+        self::assertSame($filter, $current);
+    }
 }

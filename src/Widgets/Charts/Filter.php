@@ -62,14 +62,14 @@ class Filter implements FilterInterface
     private $condition = '';
 
     /**
-     * @Annotation{'display_campo' => NomeCampo,'display_valor' => valor,'display_operador' => '=',
-     * 'campo' => 'tabela.campo','operador' => '=','valor' => valor}
      * @param string $displayField
      * @param string $displayOperator
      * @param string $displayValue
      * @param string $field
      * @param string $operator
      * @param string $value
+     * @param string $group
+     * @param string $condition
      * @return $this
      */
     public function filter(
@@ -81,7 +81,7 @@ class Filter implements FilterInterface
         string $value,
         string $group = '',
         string $condition = ''
-    ): Filter {
+    ): FilterInterface {
         $this->setAddDisplayField($displayField);
         $this->setAddDisplayOperator($displayOperator);
         $this->setAddDisplayValue($displayValue);
