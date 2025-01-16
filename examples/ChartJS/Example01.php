@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Dashboards\Examples\ChartJS;
 
+use Dashboards\Widgets\Components\Actions\ActionButton;
 use Dashboards\Widgets\Interfaces\InterfaceWidget;
 use Dashboards\Widgets\OptionsChartJS;
 
@@ -21,13 +22,14 @@ class Example01 extends OptionsChartJS implements InterfaceWidget
         return [];
     }
 
-    public function render(): array
+    public function rawChart(): array
     {
         return self::chart()
             ->title(self::CARDS['chart']['title'])
             ->name(self::CARDS['chart']['name'])
-            ->chart(
+            ->charts(
                 $this->addConfiguration()
+                    ->type('line')
                     ->labels([
                         'Janeiro', 'Fevereiro', 'Marco',
                         'Abril', 'Maio', 'Junho', 'Julho',
@@ -70,9 +72,14 @@ class Example01 extends OptionsChartJS implements InterfaceWidget
             )
             ->components(
                 [
-                    $this->addComponents()->button()->name('Botão de ação 1'),
+                    $this->addComponents()
+                        ->button()
+                        ->name('Botão de ação 1')
+                        ->action(
+                            ActionButton::make()->onClickAlert('Ação 1')
+                        ),
                     $this->addComponents()->button()->name('Botão de ação 2'),
-                    $this->addComponents()->selectButton()->name('Botão de ação 3')->options([
+                    $this->addComponents()->selectButton()->name('filial_id')->options([
                         'filial1' => 'Filial1',
                         'filial2' => 'Filial2',
                         'filial3' => 'Filial3',

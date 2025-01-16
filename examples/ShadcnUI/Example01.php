@@ -22,12 +22,12 @@ class Example01 extends OptionsShadcnUI implements InterfaceWidget
         return [];
     }
 
-    public function render(): array
+    public function rawChart(): array
     {
         return self::chart()
             ->title(self::CARDS['chart']['title'])
             ->name(self::CARDS['chart']['name'])
-            ->chart(
+            ->charts(
                 $this->addConfiguration()
                     ->chartData([
                         ['month' => 'January', 'ativo' => 186, 'inativo' => 80],

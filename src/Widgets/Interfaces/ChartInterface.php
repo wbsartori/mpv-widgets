@@ -27,7 +27,7 @@ interface ChartInterface
      * @param ConfigurationInterface $configurationInterface
      * @return ChartInterface
      */
-    public function chart(ConfigurationInterface $configurationInterface): ChartInterface;
+    public function charts(ConfigurationInterface $configurationInterface): ChartInterface;
 
     /**
      * @param FilterInterface $filterInterface

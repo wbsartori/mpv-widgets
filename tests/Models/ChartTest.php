@@ -13,7 +13,7 @@ class ChartTest extends TestCase
     public function testGet()
     {
         $chart = new ChartJS();
-        $current = $chart->chart(
+        $current = $chart->charts(
             (new Configuration())
                 ->type('line')
                 ->labels([

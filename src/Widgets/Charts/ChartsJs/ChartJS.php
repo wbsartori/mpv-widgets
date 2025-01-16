@@ -44,7 +44,6 @@ class ChartJS implements ChartInterface
                 $components[] = $component->get();
             }
         }
-
         return [
             'title' => $this->title,
             'name' => $this->name,
@@ -78,7 +77,7 @@ class ChartJS implements ChartInterface
      * @param ConfigurationInterface $configurationInterface
      * @return ChartJS
      */
-    public function chart(ConfigurationInterface $configurationInterface): ChartJS
+    public function charts(ConfigurationInterface $configurationInterface): ChartJS
     {
         $this->chart = $configurationInterface->get();
         return $this;

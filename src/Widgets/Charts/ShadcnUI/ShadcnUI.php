@@ -26,13 +26,24 @@ class ShadcnUI implements ChartInterface
      * @var array
      */
     private $filters;
+    /**
+     * @var array|\Dashboards\Widgets\Interfaces\ComponentsInterface[]
+     */
+    private array $components = [];
 
     public function get(): array
     {
+        $components = [];
+        if($this->components !== []) {
+            foreach ($this->components as $component) {
+                $components[] = $component->get();
+            }
+        }
         return [
             'title' => $this->title,
             'name' => $this->name,
             'chart' => $this->chart,
+            'components' => $components,
             'filters' => $this->filters,
         ];
     }
@@ -49,7 +60,7 @@ class ShadcnUI implements ChartInterface
         return $this;
     }
 
-    public function chart(ConfigurationInterface $configurationInterface): ShadcnUI
+    public function charts(ConfigurationInterface $configurationInterface): ShadcnUI
     {
         $this->chart = $configurationInterface->get();
         return $this;
@@ -58,6 +69,13 @@ class ShadcnUI implements ChartInterface
     public function filters(FilterInterface $filterInterface): ShadcnUI
     {
         $this->filters = $filterInterface->get();
+        return $this;
+    }
+
+
+    public function components(array $components = []): ShadcnUI
+    {
+        $this->components = $components;
         return $this;
     }
 }

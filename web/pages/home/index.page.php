@@ -1,8 +1,8 @@
 <?php require_once dirname(__DIR__) . '/layouts/header.layout.php';
 
-$chart1 = (new \Dashboards\Examples\ChartJS\Example01())->render();
+$chart1 = (new \Dashboards\Examples\ChartJS\Example01())->rawChart();
 
-$chart2 = (new \Dashboards\Examples\ChartJS\Example01())->render();
+$chart2 = (new \Dashboards\Examples\ChartJS\Example01())->rawChart();
 ?>
 
     <div class="dash-container">

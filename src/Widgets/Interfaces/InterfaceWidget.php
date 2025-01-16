@@ -14,5 +14,5 @@ interface InterfaceWidget
     /**
      * @return array
      */
-    public function render(): array;
+    public function rawChart(): array;
 }
